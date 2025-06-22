@@ -1,5 +1,6 @@
-import { Column, DataType, Model } from "sequelize-typescript";
+import { Column, DataType, HasMany, Model } from "sequelize-typescript";
 import { Table } from 'sequelize-typescript'
+import { Products } from "src/product/models/product.model";
 
 interface ICategoryCreationAttr{
     name: string;
@@ -20,4 +21,8 @@ export class Category extends Model<Category, ICategoryCreationAttr>{
         unique: true
     })
     declare name: string;
+
+    @HasMany(()=> Products)
+    peoducts: Products[]
+
 }

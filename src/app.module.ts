@@ -15,6 +15,12 @@ import { DonationModule } from './donation/donation.module';
 import { CreateSocialModule } from './create-social/create-social.module';
 import { Donation } from 'src/donation/models/donation.model';
 import { CreateSocial } from 'src/create-social/models/create-social.model';
+import { RoleModule } from './role/role.module';
+import { ProductImageModule } from './product_image/product_image.module';
+import { ProductModule } from './product/product.module';
+import { Role } from 'src/role/models/role.model';
+import { Products } from 'src/product/models/product.model';
+import { ProductImage } from 'src/product_image/models/product_image.model';
 
 @Module({
   imports: [
@@ -30,7 +36,7 @@ import { CreateSocial } from 'src/create-social/models/create-social.model';
     username: process.env.PG_USER,
     password: process.env.PG_PASSWORD,
     database: process.env.PG_DB,
-    models: [Social, Kuryer, Category, Admin, User, Notification, Donation, CreateSocial],
+    models: [Social, Kuryer, Category, Admin, User, Notification, Donation, CreateSocial, Role, Products, ProductImage],
     autoLoadModels: true,
     logging: false,
     sync: {alter: true}
@@ -46,7 +52,13 @@ import { CreateSocial } from 'src/create-social/models/create-social.model';
 
   DonationModule,
 
-  CreateSocialModule
+  CreateSocialModule,
+
+  RoleModule,
+
+  ProductImageModule,
+
+  ProductModule,
 
 ],
 })

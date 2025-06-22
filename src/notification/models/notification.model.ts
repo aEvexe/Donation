@@ -7,7 +7,7 @@ interface INotificationCreationAttr{
     message: string
 }
 
-@Table({ tableName: "user", timestamps: true})
+@Table({ tableName: "notification", timestamps: true})
 export class Notification extends Model<Notification, INotificationCreationAttr>{
     @Column({
         type: DataType.INTEGER,

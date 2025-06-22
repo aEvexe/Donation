@@ -3,6 +3,7 @@ import { Table } from 'sequelize-typescript'
 import { CreateSocial } from "src/create-social/models/create-social.model";
 import { Donation } from "src/donation/models/donation.model";
 import { Notification } from "src/notification/models/notification.model";
+import { Products } from "src/product/models/product.model";
 import { Social } from "src/social/models/social.models";
 
 interface IUserCreationAttr{
@@ -81,6 +82,9 @@ export class User extends Model<User, IUserCreationAttr>{
 
     @HasMany(()=>Donation)
     creators: Donation[]
+
+    @HasMany(()=> Products)
+    product: Products[]
 
     @BelongsToMany(()=>Social, ()=>CreateSocial)
     Socials: Social[]
